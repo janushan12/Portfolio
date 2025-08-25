@@ -5,14 +5,16 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 const app = express();
-app.use(bodyParser.json());
+
 app.use(cors({
-    origin: "https://janushan12.github.io/Portfolio/",
+    origin: "https://janushan12.github.io",
     methods: ["GET", "POST", "PUT", "OPTIONS"],
     credentials: true
 }));
 
 app.options("*", cors())
+
+app.use(bodyParser.json());
 
 app.post("/send", async (req, res) => {
     const { name, email, subject, message } = req.body;
