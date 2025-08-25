@@ -6,11 +6,8 @@ require("dotenv").config();
 
 const app = express();
 
-app.use(cors({
-    origin: "https://janushan12.github.io",
-    methods: ["GET", "POST", "PUT", "OPTIONS"],
-}));
-app.options("*", cors())
+app.use(cors());
+// app.options("*", cors())
 
 app.use(bodyParser.json());
 
