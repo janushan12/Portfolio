@@ -20,8 +20,9 @@ app.post("/send", async (req, res) => {
         });
 
         let mailOptions = {
-            From: email,
+            from: process.env.EMAIL_USER,
             to: "janu.1999.12@gmail.com",
+            replyTo: email,
             subject: `Portfolio Contact: ${name}`,
             text: `You got a message from:
             Name: ${name}
