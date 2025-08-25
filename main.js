@@ -24,7 +24,7 @@ document.getElementById("contactForm").addEventListener("submit", async (e)=> {
     };
 
     try {
-    const response = await fetch("http://localhost:5000/send", {
+    const response = await fetch("https://portfolio-production-011b.up.railway.app/send", {
         method: "POST",
         headers: { "Content-Type": "Application/json" },
         body: JSON.stringify(formData)
